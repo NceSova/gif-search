@@ -23,7 +23,6 @@ function fetchGif(search: string) {
     })
     .catch((error) => {
       console.log(error);
-      alert(error);
     });
 }
 fetchGif("");

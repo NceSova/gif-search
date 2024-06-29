@@ -4,14 +4,49 @@
   box-sizing: border-box;
 }
 
-.main-container {
-  width: 100%;
-  height: 100vh;
+body {
   background-color: lightcyan;
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239800a1' fill-opacity='0.22'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
 
 img {
-  width: 100vw;
+  width: clamp(200px, 90vw, 800px);
   height: auto;
+  border: 8px solid lightpink;
+  border-radius: 32px;
+  background-color: lightgreen;
+}
+
+input {
+  font-size: 0.9rem;
+  background-color: lightblue;
+  border: none;
+  padding: 16px;
+  color: white;
+  border-radius: 16px;
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+button {
+  font-size: 0.9rem;
+  border: none;
+  background-color: lightcoral;
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
 }
