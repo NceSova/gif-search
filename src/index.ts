@@ -1,3 +1,4 @@
+import {resolve} from "../webpack.common";
 import "./index.css";
 
 const API_KEY = "hO0hgMqv01petXEKhgJbcKSFW91GYQuo";
@@ -10,19 +11,13 @@ button.addEventListener("click", (e) => {
   input.value = "";
   fetchGif(inputText);
 });
-function fetchGif(search: string) {
-  fetch(
+async function fetchGif(search: string) {
+  const responce = await fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${search}&weirdness=10`,
     {mode: "cors"}
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      img.src = response.data.images.original.url;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  );
+  const catData = await responce.json();
+  img.src = catData.data.images.original.url;
+  return 1;
 }
-fetchGif("");
+fetchGif("cats");

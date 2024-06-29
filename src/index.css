@@ -24,6 +24,7 @@ body {
 img {
   width: clamp(200px, 90vw, 800px);
   height: auto;
+  max-width: 90vh;
   border: 8px solid lightpink;
   border-radius: 32px;
   background-color: lightgreen;
